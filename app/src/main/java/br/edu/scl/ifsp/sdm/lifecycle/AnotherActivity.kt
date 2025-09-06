@@ -3,6 +3,7 @@ package br.edu.scl.ifsp.sdm.lifecycle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.edu.scl.ifsp.sdm.lifecycle.databinding.ActivityAnotherBinding
+import br.edu.scl.ifsp.sdm.lifecycle.databinding.ToolbarBinding
 
 class AnotherActivity : AppCompatActivity() {
     private val activityAnotherBinding: ActivityAnotherBinding by lazy {
@@ -12,5 +13,7 @@ class AnotherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activityAnotherBinding.root)
+        setSupportActionBar(activityAnotherBinding.toolbarIn.toolbar)
+        supportActionBar?.subtitle = getString(R.string.another)
     }
 }
